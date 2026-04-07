@@ -124,9 +124,9 @@ vi rules.txt
 # Exports firewall rules to file for review
 
 
-# 
+
 # Step 11: View Firewall Config Files
-# 
+
 
 sudo cat /etc/ufw/user.rules
 sudo cat /etc/ufw/user6.rules
