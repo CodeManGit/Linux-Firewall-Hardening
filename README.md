@@ -19,7 +19,7 @@ Shows if firewall is active and lists current rules
 
 sudo ufw enable
 
-# Turns on the firewall and begins enforcing rules
+Turns on the firewall and begins enforcing rules
 
 
 
@@ -32,8 +32,9 @@ sudo ufw default allow outgoing
 
 sudo ufw status verbose
 
-# deny incoming = blocks unauthorized inbound traffic
-# allow outgoing = allows normal outbound traffic
+deny incoming = blocks unauthorized inbound traffic
+
+allow outgoing = allows normal outbound traffic
 
 
 
@@ -42,29 +43,36 @@ sudo ufw status verbose
 
 sudo ufw logging on
 
-# Enables firewall logging
+Enables firewall logging
 
 sudo journalctl -u ufw --no-pager
+
 sudo tail -f /var/log/ufw.log
 
-# View firewall logs (real-time monitoring)
+View firewall logs (real-time monitoring)
 
 
-# 
+
 # Step 5: Allow Required Services
-#
 
 # Allow SSH
+
 sudo ufw allow ssh
+
 sudo ufw allow 22/tcp
 
 # Allow HTTP/HTTPS
+
 sudo ufw allow http
+
 sudo ufw allow https
+
 sudo ufw allow 80/tcp
+
 sudo ufw allow 443/tcp
 
 # Allow ICMP (ping)
+
 sudo ufw allow icmp
 
 
@@ -74,7 +82,7 @@ sudo ufw allow icmp
 
 sudo ufw allow from 192.168.1.100 to any port 22
 
-# Only allows SSH access from this IP (more secure)
+Only allows SSH access from this IP (more secure)
 
 
 
@@ -83,7 +91,7 @@ sudo ufw allow from 192.168.1.100 to any port 22
 
 sudo ufw allow from 192.168.1.0/24
 
-# Allows traffic from entire subnet
+Allows traffic from entire subnet
 
 
 
@@ -94,15 +102,15 @@ sudo ufw allow from 192.168.1.0/24
 
 sudo ufw deny from 203.0.113.5
 
-# Block subnet
+Block subnet
 
 sudo ufw deny from 203.0.113.0/24
 
-# Block FTP port
+Block FTP port
 
 sudo ufw deny 21/tcp
 
-# Reduces attack surface
+Reduces attack surface
 
 
 
@@ -115,9 +123,9 @@ sudo ufw show raw
 
 sudo ufw default
 
-# Shows active rules and default policies
+Shows active rules and default policies
 
-# Delete rule by number
+Delete rule by number
 
 sudo ufw delete 3
 
@@ -130,7 +138,7 @@ sudo iptables -L > rules.txt
 
 vi rules.txt
 
-# Exports firewall rules to file for review
+Exports firewall rules to file for review
 
 
 
@@ -151,7 +159,7 @@ sudo iptables -L -v -n
 
 sudo ip6tables -L -v -n
 
-# Shows stored rules and active configurations
+Shows stored rules and active configurations
 
 
 
@@ -164,7 +172,7 @@ sudo ufw reload
 
 sudo ufw status verbose
 
-# Applies manual changes
+Applies manual changes
 
 
 
@@ -175,8 +183,8 @@ sudo ufw reset
 
 sudo ufw disable
 
-# reset = clears rules
-# disable = turns firewall off
+reset = clears rules
+disable = turns firewall off
 
 
 
@@ -189,7 +197,7 @@ sudo ufw status numbered > ufw-rules.txt
 
 sudo cp -r /etc/ufw/*.* etc-ufw
 
-# Transfer to another machine
+Transfer to another machine
 
 scp -r ufw-rules.txt etc-ufw user@destination:/home/user/
 
@@ -210,11 +218,11 @@ sudo ufw status verbose
 # Key Security Takeaways
 
 
-# - Default deny incoming improves security
-# - Restricting SSH reduces attack surface
-# - Logging helps detect suspicious activity
-# - Verifying rules ensures correct configuration
-# - Backups allow easy recovery
+ - Default deny incoming improves security
+ - Restricting SSH reduces attack surface
+ - Logging helps detect suspicious activity
+ - Verifying rules ensures correct configuration
+ - Backups allow easy recovery
 
 
 
@@ -223,15 +231,15 @@ sudo ufw status verbose
 
 # README.md → step-by-step guide
 # rules.txt → firewall rule output
-# (optional) screenshots of rules/logs
+
 
 
 
 # Skills Demonstrated
 
 
-# Linux system administration
-# Firewall configuration (UFW)
-# Access control and SSH hardening
-# Log analysis
-# Security-focused system hardening
+ Linux system administration
+ Firewall configuration (UFW)
+ Access control and SSH hardening
+ Log analysis
+ Security-focused system hardening
