@@ -129,13 +129,17 @@ vi rules.txt
 
 
 sudo cat /etc/ufw/user.rules
+
 sudo cat /etc/ufw/user6.rules
+
 sudo cat /etc/default/ufw
 
 ls /etc/ufw/applications.d/
+
 sudo cat /etc/ufw/applications.d/openssh
 
 sudo iptables -L -v -n
+
 sudo ip6tables -L -v -n
 
 # Shows stored rules and active configurations
