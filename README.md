@@ -1,8 +1,8 @@
 # Linux Firewall Configuration & Hardening (UFW)
 
-# This project demonstrates how to harden a Linux system using UFW (Uncomplicated Firewall).
-# The goal is to configure firewall rules, restrict SSH access, enable logging,
-# verify active rules, and understand where firewall settings are stored.
+ This project demonstrates how to harden a Linux system using UFW (Uncomplicated Firewall).
+ The goal is to configure firewall rules, restrict SSH access, enable logging,
+ verify active rules, and understand where firewall settings are stored.
 
 
 # Step 1: Check Firewall Status
@@ -10,7 +10,7 @@
 
 sudo ufw status verbose
 
-# Shows if firewall is active and lists current rules
+Shows if firewall is active and lists current rules
 
 
 
